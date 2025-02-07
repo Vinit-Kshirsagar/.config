@@ -40,7 +40,7 @@ require("lazy").setup({
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "jdtls" },
+        ensure_installed = { "jdtls" }, --installs jdtls
       })
     end,
   },
