@@ -1,4 +1,4 @@
--- Lazy.nvim bootstrap
+-- Lazy.nvim 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,48 +12,47 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin setup
+-- Plugin 
 require("lazy").setup({
-  -- Treesitter for syntax highlighting
+  -- Treesitter 
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate", -- Ensure parsers are updated
+    build = ":TSUpdate", 
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = { "java", "lua", "python", "cpp", "javascript", "html" }, -- Add your desired languages
         highlight = {
-          enable = true, -- Enable Treesitter-based highlighting
-          additional_vim_regex_highlighting = false, -- Disable default regex highlighting
+          enable = true, -- Enable Treesitter
+          additional_vim_regex_highlighting = false, -- Disable default highlighting
         },
       })
     end,
   },
-  -- Mason for managing LSP servers, linters, and formatters
+  -- Mason
   {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
     end,
   },
-  -- Mason LSP Config for integrating Mason with Neovim's LSP
+  -- Mason with Neovim's LSP
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "jdtls" }, -- Automatically install Java LSP
+        ensure_installed = { "jdtls" },
       })
     end,
   },
-  -- nvim-lspconfig for configuring LSP servers
-  {
+  -- nvim-lspconfig 
     "neovim/nvim-lspconfig",
     config = function()
-      require("lspconfig").jdtls.setup{} -- Basic setup for jdtls (Java LSP)
+      require("lspconfig").jdtls.setup{} 
     end,
   },
 })
 
--- General Neovim settings
+-- General settings
 vim.opt.number = true              -- Show line numbers
 vim.opt.relativenumber = true      -- Relative line numbers
 vim.opt.tabstop = 4                -- Number of spaces for a tab
