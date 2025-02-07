@@ -28,7 +28,7 @@ require("lazy").setup({
       })
     end,
   },
-  -- Mason
+  -- Mason Installation and setup
   {
     "williamboman/mason.nvim",
     config = function()
