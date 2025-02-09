@@ -44,7 +44,7 @@ require("lazy").setup({
       })
     end,
   },
-  -- nvim-lspconfig 
+  -- nvim-lspconfig for jdtls
     "neovim/nvim-lspconfig",
     config = function()
       require("lspconfig").jdtls.setup{} 
