@@ -14,6 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin 
 require("lazy").setup({
+  -- Dracula theme for Neovim
+  { 
+    "dracula/vim",  -- Dracula theme for Neovim
+    config = function()
+      vim.cmd("colorscheme dracula")  -- Set the colorscheme to Dracula
+    end
+  }
   -- Treesitter 
   {
     "nvim-treesitter/nvim-treesitter",
