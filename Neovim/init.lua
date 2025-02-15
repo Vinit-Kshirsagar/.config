@@ -21,7 +21,7 @@ require("lazy").setup({
       vim.cmd("colorscheme dracula")  -- Set the colorscheme to Dracula
     end
   }
-  -- Treesitter 
+  -- Treesitter for text highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate", 
