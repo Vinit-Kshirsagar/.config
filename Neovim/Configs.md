@@ -7,4 +7,5 @@ This folder consists the configuration for my Neovim.
 3. LSP for code completetion
 4. Mason for installing jdtls
 5. jdtls for Java support with LSP
-
+6. Dracula theme for Neovim
+7. General settings for Neovim
